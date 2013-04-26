@@ -38,7 +38,7 @@ public class WindupMain {
 	private static final String WINDUP_COMMAND = "java -jar jboss-windup.jar";
 
 	public static void main(String[] args) {
-
+	   
 		// create the command line parser
 		CommandLineParser parser = new PosixParser();
 
@@ -64,7 +64,7 @@ public class WindupMain {
 		
 		CommandLine line = null;
 		try {
-			line = parser.parse(options, args);
+			line = parser.parse(options, args, true);
 			WindupMain cm = new WindupMain();
 			cm.processInput(line, options);
 		}
