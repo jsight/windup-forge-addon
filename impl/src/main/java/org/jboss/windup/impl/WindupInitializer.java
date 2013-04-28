@@ -9,12 +9,16 @@ import org.jboss.forge.container.event.PostStartup;
 /**
  * @author <a href="mailto:lincolnbaxter@gmail.com">Lincoln Baxter, III</a>
  */
-public class WindupInitializer {
+public class WindupInitializer
+{
 
-	@Inject
-	private Forge forge;
+   @Inject
+   private Forge forge;
 
-	public void run(@Observes PostStartup event) {
-		WindupMain.main(forge.getArgs());
-	}
+   public void run(@Observes PostStartup event)
+   {
+      String[] args = forge.getArgs();
+      if (args != null && args.length > 0)
+         WindupMain.main(args);
+   }
 }

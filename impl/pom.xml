@@ -1,54 +1,66 @@
 <?xml version="1.0"?>
-<project
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
-	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.jboss.windup</groupId>
-		<artifactId>windup-parent</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
-	</parent>
-	<artifactId>windup-impl</artifactId>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+   xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <modelVersion>4.0.0</modelVersion>
+   <parent>
+      <groupId>org.jboss.windup</groupId>
+      <artifactId>windup-parent</artifactId>
+      <version>1.0.0-SNAPSHOT</version>
+   </parent>
+   <artifactId>windup-impl</artifactId>
 
-	<properties>
-		<version.windup>0.6.6</version.windup>
-	</properties>
+   <properties>
+      <version.windup>0.6.6</version.windup>
+   </properties>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.jboss.forge</groupId>
-			<artifactId>forge-addon-container-api</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.jboss.windup</groupId>
-			<artifactId>windup-api</artifactId>
-			<scope>provided</scope>
-		</dependency>
+   <dependencies>
+      <dependency>
+         <groupId>org.jboss.forge</groupId>
+         <artifactId>forge-addon-container-api</artifactId>
+         <scope>provided</scope>
+      </dependency>
+      <dependency>
+         <groupId>org.jboss.windup</groupId>
+         <artifactId>windup-api</artifactId>
+         <scope>provided</scope>
+      </dependency>
 
-		<dependency>
-			<groupId>org.jboss.windup</groupId>
-			<artifactId>windup-engine</artifactId>
-			<version>${version.windup}</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-cli</groupId>
-			<artifactId>commons-cli</artifactId>
-			<version>1.2</version>
-			<type>jar</type>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>commons-logging</groupId>
-			<artifactId>commons-logging</artifactId>
-			<version>1.1.1</version>
-			<type>jar</type>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>commons-lang</groupId>
-			<artifactId>commons-lang</artifactId>
-			<version>2.5</version>
-		</dependency>
-	</dependencies>
+      <dependency>
+         <groupId>org.jboss.forge</groupId>
+         <artifactId>ui-api</artifactId>
+         <version>2.0.0-SNAPSHOT</version>
+         <scope>provided</scope>
+      </dependency>
+      <dependency>
+         <groupId>org.jboss.forge</groupId>
+         <artifactId>resources-api</artifactId>
+         <version>2.0.0-SNAPSHOT</version>
+         <scope>provided</scope>
+      </dependency>
+
+      <dependency>
+         <groupId>org.jboss.windup</groupId>
+         <artifactId>windup-engine</artifactId>
+         <version>${version.windup}</version>
+      </dependency>
+      <dependency>
+         <groupId>commons-cli</groupId>
+         <artifactId>commons-cli</artifactId>
+         <version>1.2</version>
+         <type>jar</type>
+         <scope>compile</scope>
+      </dependency>
+      <dependency>
+         <groupId>commons-logging</groupId>
+         <artifactId>commons-logging</artifactId>
+         <version>1.1.1</version>
+         <type>jar</type>
+         <scope>compile</scope>
+      </dependency>
+      <dependency>
+         <groupId>commons-lang</groupId>
+         <artifactId>commons-lang</artifactId>
+         <version>2.5</version>
+      </dependency>
+   </dependencies>
 </project>
