@@ -1,22 +1,22 @@
 <?xml version="1.0"?>
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
    xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
    <modelVersion>4.0.0</modelVersion>
    <parent>
       <groupId>org.jboss.windup</groupId>
-      <artifactId>windup-parent</artifactId>
+      <artifactId>windup-addon-parent</artifactId>
       <version>1.0.0-SNAPSHOT</version>
+      <relativePath>../pom.xml</relativePath>
    </parent>
-   <artifactId>windup-impl</artifactId>
 
-   <properties>
-      <version.windup>0.6.6</version.windup>
-   </properties>
+   <artifactId>windup-impl</artifactId>
 
    <dependencies>
       <dependency>
-         <groupId>org.jboss.forge</groupId>
-         <artifactId>forge-addon-container-api</artifactId>
+         <groupId>org.jboss.forge.furnace</groupId>
+         <artifactId>furnace-api</artifactId>
+         <version>${version.forge}</version>
          <scope>provided</scope>
       </dependency>
       <dependency>
@@ -26,22 +26,21 @@
       </dependency>
 
       <dependency>
-         <groupId>org.jboss.forge</groupId>
+         <groupId>org.jboss.forge.addon</groupId>
          <artifactId>ui-api</artifactId>
-         <version>2.0.0-SNAPSHOT</version>
+         <version>${version.forge}</version>
          <scope>provided</scope>
       </dependency>
       <dependency>
-         <groupId>org.jboss.forge</groupId>
+         <groupId>org.jboss.forge.addon</groupId>
          <artifactId>resources-api</artifactId>
-         <version>2.0.0-SNAPSHOT</version>
+         <version>${version.forge}</version>
          <scope>provided</scope>
       </dependency>
 
       <dependency>
          <groupId>org.jboss.windup</groupId>
          <artifactId>windup-engine</artifactId>
-         <version>${version.windup}</version>
       </dependency>
       <dependency>
          <groupId>commons-cli</groupId>

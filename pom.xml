@@ -4,12 +4,13 @@
    <modelVersion>4.0.0</modelVersion>
 
    <groupId>org.jboss.windup</groupId>
-   <artifactId>windup-parent</artifactId>
+   <artifactId>windup-addon-parent</artifactId>
    <version>1.0.0-SNAPSHOT</version>
    <packaging>pom</packaging>
 
    <properties>
-      <version.forge>2.0.0.Alpha3</version.forge>
+      <version.forge>2.0.0-SNAPSHOT</version.forge>
+      <version.windup.engine>1.0.0-SNAPSHOT</version.windup.engine>
    </properties>
 
    <modules>
@@ -22,7 +23,27 @@
 
    <dependencyManagement>
       <dependencies>
+         <!-- Windup ENGINE Dependencies -->
+         <dependency>
+            <groupId>org.jboss.windup</groupId>
+            <artifactId>windup-engine</artifactId>
+            <version>${version.windup.engine}</version>
+         </dependency>
+         <dependency>
+            <groupId>org.jboss.windup</groupId>
+            <artifactId>windup-rules</artifactId>
+            <version>${version.windup.engine}</version>
+         </dependency>
+         <!-- END Windup ENGINE Dependencies -->
 
+         <!-- Windup Furnace Addon Dependencies -->
+         <dependency>
+            <groupId>org.jboss.windup</groupId>
+            <artifactId>windup</artifactId>
+            <version>${project.version}</version>
+            <classifier>forge-addon</classifier>
+            <scope>provided</scope>
+         </dependency>
          <dependency>
             <groupId>org.jboss.windup</groupId>
             <artifactId>windup</artifactId>
@@ -47,22 +68,23 @@
             <version>${project.version}</version>
             <scope>provided</scope>
          </dependency>
+         <!-- END Windup Furnace Addon Dependencies -->
 
 
          <dependency>
-            <groupId>org.jboss.forge</groupId>
-            <artifactId>forge-addon-container-api</artifactId>
+            <groupId>org.jboss.forge.furnace</groupId>
+            <artifactId>furnace-api</artifactId>
             <version>${version.forge}</version>
             <scope>provided</scope>
          </dependency>
          <dependency>
-            <groupId>org.jboss.forge</groupId>
+            <groupId>org.jboss.forge.test</groupId>
             <artifactId>forge-test-harness</artifactId>
             <version>${version.forge}</version>
             <scope>provided</scope>
          </dependency>
          <dependency>
-            <groupId>org.jboss.forge</groupId>
+            <groupId>org.jboss.forge.test</groupId>
             <artifactId>arquillian-forge-classpath</artifactId>
             <version>${version.forge}</version>
             <scope>test</scope>
