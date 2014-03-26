@@ -6,9 +6,10 @@ import java.util.logging.Logger;
 import javax.inject.Inject;
 
 import org.jboss.forge.addon.resource.DirectoryResource;
-import org.jboss.forge.addon.ui.UICommand;
+import org.jboss.forge.addon.ui.command.UICommand;
 import org.jboss.forge.addon.ui.context.UIBuilder;
 import org.jboss.forge.addon.ui.context.UIContext;
+import org.jboss.forge.addon.ui.context.UIExecutionContext;
 import org.jboss.forge.addon.ui.context.UIValidationContext;
 import org.jboss.forge.addon.ui.input.UIInput;
 import org.jboss.forge.addon.ui.input.UIInputMany;
@@ -23,7 +24,7 @@ import org.jboss.windup.WindupService;
 
 public class WindupWizard implements UICommand
 {
-   private static Logger log = Logger.getLogger(UICommand.class.getName());
+   private static Logger log = Logger.getLogger(WindupWizard.class.getName());
 
    @Inject
    private WindupService windup;
@@ -44,7 +45,7 @@ public class WindupWizard implements UICommand
    private UIInputMany<String> packages;
 
    @Override
-   public UICommandMetadata getMetadata()
+   public UICommandMetadata getMetadata(UIContext ctx)
    {
       return Metadata.forCommand(getClass()).name("Run Windup").description("Run Windup Migation Analyzer")
                .category(Categories.create("Platform", "Migration"));
@@ -68,7 +69,7 @@ public class WindupWizard implements UICommand
    }
 
    @Override
-   public Result execute(UIContext context) throws Exception
+   public Result execute(UIExecutionContext executionContext) throws Exception
    {
       StringBuilder builder = new StringBuilder();
       for (String packg : packages.getValue())

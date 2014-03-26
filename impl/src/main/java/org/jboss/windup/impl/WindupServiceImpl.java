@@ -148,7 +148,11 @@ public class WindupServiceImpl implements WindupService
 
             // Run Windup.
             WindupEngine engine = new WindupEngine(settings);
-            engine.process(inputPath, outputPath);
+            if (isSource) {
+            	engine.processSourceDirectory(inputPath, outputPath);
+            } else {
+            	engine.processArchive(inputPath, outputPath);
+            }
          }
       }
       catch (FileNotFoundException e)

@@ -11,10 +11,9 @@ import javax.inject.Inject;
 
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
-import org.jboss.forge.arquillian.Addon;
+import org.jboss.forge.arquillian.AddonDependency;
 import org.jboss.forge.arquillian.Dependencies;
 import org.jboss.forge.arquillian.archive.ForgeArchive;
-import org.jboss.forge.furnace.addons.AddonId;
 import org.jboss.forge.furnace.repositories.AddonDependencyEntry;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.windup.WindupService;
@@ -27,7 +26,7 @@ public class WindupAddonTest
 {
    @Deployment
    @Dependencies({
-            @Addon(name = "org.jboss.windup:windup", version = "1.0.0-SNAPSHOT"),
+            @AddonDependency(name = "org.jboss.windup:windup", version = "0.8.0-SNAPSHOT"),
    })
    public static ForgeArchive getDeployment()
    {
@@ -35,7 +34,7 @@ public class WindupAddonTest
                .create(ForgeArchive.class)
                .addBeansXML()
                .addAsAddonDependencies(
-                        AddonDependencyEntry.create(AddonId.from("org.jboss.windup:windup", "1.0.0-SNAPSHOT"))
+                        AddonDependencyEntry.create("org.jboss.windup:windup", "0.8.0-SNAPSHOT")
                );
 
       return archive;
