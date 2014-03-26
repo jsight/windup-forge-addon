@@ -27,10 +27,12 @@
          <artifactId>arquillian-furnace-classpath</artifactId>
          <scope>test</scope>
       </dependency>
-      <dependency>
-         <groupId>org.jboss.forge.furnace</groupId>
-         <artifactId>furnace-api</artifactId>
-         <scope>provided</scope>
-      </dependency>
+       <!-- Furnace Container -->
+       <dependency>
+           <groupId>org.jboss.forge.furnace.container</groupId>
+           <artifactId>cdi</artifactId>
+           <classifier>forge-addon</classifier>
+           <scope>test</scope>
+       </dependency>
    </dependencies>
 </project>

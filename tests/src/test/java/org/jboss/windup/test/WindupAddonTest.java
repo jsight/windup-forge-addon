@@ -26,7 +26,7 @@ public class WindupAddonTest
 {
    @Deployment
    @Dependencies({
-            @AddonDependency(name = "org.jboss.windup:windup", version = "0.8.0-SNAPSHOT"),
+            @AddonDependency(name = "org.jboss.windup:windup"),
    })
    public static ForgeArchive getDeployment()
    {
@@ -34,7 +34,8 @@ public class WindupAddonTest
                .create(ForgeArchive.class)
                .addBeansXML()
                .addAsAddonDependencies(
-                        AddonDependencyEntry.create("org.jboss.windup:windup", "0.8.0-SNAPSHOT")
+                        AddonDependencyEntry.create("org.jboss.forge.furnace.container:cdi"),
+                        AddonDependencyEntry.create("org.jboss.windup:windup")
                );
 
       return archive;

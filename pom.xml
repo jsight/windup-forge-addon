@@ -23,6 +23,13 @@
 
    <dependencyManagement>
       <dependencies>
+         <dependency>
+            <groupId>org.jboss.forge</groupId>
+            <artifactId>forge-bom</artifactId>
+            <version>${version.forge}</version>
+            <type>pom</type>
+            <scope>import</scope>
+         </dependency>
          <!-- Windup ENGINE Dependencies -->
          <dependency>
             <groupId>org.jboss.windup</groupId>
@@ -68,15 +75,16 @@
             <version>${project.version}</version>
             <scope>provided</scope>
          </dependency>
-         <!-- END Windup Furnace Addon Dependencies -->
-
-
          <dependency>
-            <groupId>org.jboss.forge.furnace</groupId>
-            <artifactId>furnace-api</artifactId>
+            <groupId>org.jboss.forge.furnace.container</groupId>
+            <artifactId>cdi</artifactId>
+            <classifier>forge-addon</classifier>
             <version>${version.forge}</version>
             <scope>provided</scope>
          </dependency>
+         <!-- END Windup Furnace Addon Dependencies -->
+
+
          <dependency>
             <groupId>org.jboss.forge.furnace.test</groupId>
             <artifactId>furnace-test-harness</artifactId>
