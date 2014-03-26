@@ -14,12 +14,6 @@
 
    <dependencies>
       <dependency>
-         <groupId>org.jboss.forge.furnace</groupId>
-         <artifactId>furnace-api</artifactId>
-         <version>${version.forge}</version>
-         <scope>provided</scope>
-      </dependency>
-      <dependency>
          <groupId>org.jboss.forge.furnace.container</groupId>
          <artifactId>cdi</artifactId>
          <version>${version.forge}</version>         
